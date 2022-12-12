@@ -11,7 +11,7 @@
 - Unit testing
 
 Unit testing은 Xunit을 기본으로 사용합니다. 지원되지 않는 경우 해당 언어의 unit test 방법론을 따릅니다.  
-Code kata + Agile 을 사용하여 프로젝트와 공부도 같이 할 수 있는 방법입니다.
+Code kata + Agile 을 사용하여 프로젝트와 공부도 같이 할 수 있는 방법입니다. TDD를 사용하여 프로젝트를 진행 합니다.
 
 # How to play kata
 
