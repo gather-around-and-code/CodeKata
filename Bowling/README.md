@@ -6,7 +6,7 @@
 ```
 출력: Console/GUI 모두 가능
 언어: 아무거나
-점수 계산 방식: (참고)[https://tootock.tistory.com/5]
+점수 계산 방식: [참고](https://tootock.tistory.com/5)
 
 최대한 빨ㄹ ㅣ부탁 드립니다
 ```
