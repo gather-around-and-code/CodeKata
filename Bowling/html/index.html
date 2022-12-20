@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <title>
-        Welcome to Gather's bowling pub !!
-    </title>
     <head>
-        Weclome to Gather's bowling pub !!
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Welcome to Gather's bowling pub !!</title>
+        <style>
+            :root {
+                --border: #c2c2c2;
+                --text-primary: #111;
+                --bg-1: #e4e4e4;
+                --bg-2: #fff;
+            }
+            table {
+                table-layout: fixed;
+                width: 100%;
+                border-bottom: 1px solid var(--border, #c2c2c2);
+                border-left: 1px solid var(--border, #c2c2c2);
+            }
+            table th,
+            table td {
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--text-primary, #111);
+                letter-spacing: -2px;
+                border-top: 1px solid var(--border, #c2c2c2);
+                border-right: 1px solid var(--border, #c2c2c2);
+                text-align: center;
+            }
+            table th {
+                padding: 5px 0;
+                background: var(--bg-1, #e4e4e4);
+            }
+            table td {
+                height: 32px;
+                background: var(--bg-2, #fff);
+            }
+        </style>
     </head>
     <body>
-        <h1>Score board</h1>
+        <header>
+            <h1>code kata</h1>
+        </header>
+        <main>
+            <!-- table -->
+            <table cellpadding="0" cellspacing="0">
+                <caption>
+                    bowling score board
+                </caption>
+                <tr>
+                    <th rowspan="3">person01</th>
+                    <td colspan="2">01</td>
+                    <td colspan="2">02</td>
+                    <td colspan="2">03</td>
+                    <td colspan="2">04</td>
+                    <td colspan="2">05</td>
+                    <td colspan="2">06</td>
+                    <td colspan="2">07</td>
+                    <td colspan="2">08</td>
+                    <td colspan="2">09</td>
+                    <td colspan="2">10</td>
+                    <td>total score</td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>02</td>
+                    <td>03</td>
+                    <td>04</td>
+                    <td>05</td>
+                    <td>06</td>
+                    <td>07</td>
+                    <td>08</td>
+                    <td>09</td>
+                    <td>11</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td rowspan="2">000</td>
+                </tr>
+                <tr>
+                    <td colspan="2">total01</td>
+                    <td colspan="2">total02</td>
+                    <td colspan="2">total03</td>
+                    <td colspan="2">total04</td>
+                    <td colspan="2">total05</td>
+                    <td colspan="2">total06</td>
+                    <td colspan="2">total07</td>
+                    <td colspan="2">total08</td>
+                    <td colspan="2">total09</td>
+                    <td colspan="2">total10</td>
+                </tr>
+            </table>
+            <!-- table -->
+        </main>
     </body>
 </html>
