@@ -1,4 +1,6 @@
 const exp = require("constants");
+const isStrike = require("./index");
+
 
 test('테스트 코드의 설명', () => {
 	const test = 1;
@@ -41,4 +43,9 @@ test('IsStrike test', () => {
 	expect(IsStrike(9)).toBeFalsy();
 	expect(IsStrike(0)).toBeFalsy();
 	expect(IsStrike(-10)).toBeFalsy();
+});
+
+
+test('module test', () => {
+	expect(isStrike(10)).toBeTruthy();
 });
