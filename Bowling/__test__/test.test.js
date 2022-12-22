@@ -1,50 +1,36 @@
-const exp = require("constants");
-const isStrike = require("../src/js/index");
+describe("Bowling score board tests", () => {
+	// test
+	// player -> pin -> getpin -> IsStrike -> score board -> score board show
+	// 플레이어 => 공을 굴린다 => 핀이 넘어진다 => 스트라이크? => 점수를 계산한다 => 점수를 표시한다.
+	// 게임 단위? 플레이 단위? 플레이는 몇명?
+	function calculateScores(frame) {
+		// 현재 프레임에 쓰러진 핀 담기
+		let pin = frame[0].split(',');
 
-describe("Bowling tests", () => {
-	test("테스트 코드의 설명", () => {
-		const test = 1;
-		expect(test).toBe(1);
+		// 프레임에 점수 계산하기(3번째칸)
+		let score = 0;
+		for(let i = 0; i < pin.length; i++){
+			score += parseInt(pin[i])
+		}
+
+		if (score > 10){
+			return -1;
+		}
+		// 나아라 점수!
+		return score;
+	}
+	
+	test("check frame score", () => {
+		let frame = [['1,2'], ['2,3'], ['10,0']];
+
+		expect(calculateScores(frame[0])).toBe(3);
+		expect(calculateScores(frame[1])).toBe(5);
+		expect(calculateScores(frame[2])).toBe(10);
 	});
 
-	test("1 is 1", () => {
-		expect(1).toBe(1);
-	});
+	test("check validation score", () => {
+		let frame = [['5,6']];
 
-	test("abcd test", () => {
-		const test = "abcd";
-		expect(test).toEqual("abcd");
-	});
-
-	test("strike over 10 pin test", () => {
-		const strike = function (pin) {
-			if (pin === 10) {
-				return "X";
-			} else {
-				pin.toString();
-			}
-		};
-
-		const pin = 11;
-		const result = strike(pin);
-		expect(result).not.toBe("X");
-	});
-
-	test("IsStrike test", () => {
-		const IsStrike = function (pin) {
-			if (pin === 10) {
-				return true;
-			}
-			return false;
-		};
-
-		expect(IsStrike(10)).toBeTruthy();
-		expect(IsStrike(9)).toBeFalsy();
-		expect(IsStrike(0)).toBeFalsy();
-		expect(IsStrike(-10)).toBeFalsy();
-	});
-
-	test("module test", () => {
-		expect(isStrike(10)).toBeTruthy();
-	});
+		expect(calculateScores(frame[0])).toBe(-1);
+	})
 });
