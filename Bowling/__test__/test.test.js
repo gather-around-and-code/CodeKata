@@ -34,3 +34,6 @@ describe("Bowling score board tests", () => {
 		expect(calculateScores(frame[0])).toBe(-1);
 	})
 });
+
+https://github.com/gather-around-and-code/CodeKata/issues/2
+git commit -am "#2"
