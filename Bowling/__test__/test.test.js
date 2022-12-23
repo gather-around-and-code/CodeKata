@@ -7,7 +7,7 @@ describe("Bowling score board tests", () => {
 		// 현재 프레임에 쓰러진 핀 담기
 		let pin = frame[0].split(',');
 
-		// 프레임에 점수 계산하기(3번째칸)
+		// 프레임에 점수 계산하기(#2 스코어보드 이미지)
 		let score = 0;
 		for(let i = 0; i < pin.length; i++){
 			score += parseInt(pin[i])
@@ -16,7 +16,7 @@ describe("Bowling score board tests", () => {
 		if (score > 10){
 			return -1;
 		}
-		// 나아라 점수!
+		// 나와라 점수!
 		return score;
 	}
 	
@@ -35,5 +35,5 @@ describe("Bowling score board tests", () => {
 	})
 });
 
-https://github.com/gather-around-and-code/CodeKata/issues/2
-git commit -am "#2"
+// https://github.com/gather-around-and-code/CodeKata/issues/2
+// git commit -am "#2"
