@@ -37,26 +37,22 @@ describe("Bowling score board tests", () => {
 		}
 	}
 
-	test("Get final Score", () => {
-		const game = new gameBowling();
-		var finalScore = game.getFinalScore();
+	test("get final score", () => {
 
-		expect(finalScore).toBe(10);
 	});
 
-	test("Get Current frame number", () => {
-		const game = new gameBowling();
-		var currentFrameNumbr = game.getCurrnetFrame();
+	// test("get current frame number", () => {
+	// 	const game = new gamebowling();
+	// 	var currentframenumbr = game.getcurrnetframe();
 
-		expect(currentFrameNumbr).toBe(1);
-	});
+	// 	expect(currentframenumbr).tobe(1);
+	// });
 
-	test("get hit pin count", () => {
-		const game = new gameBowling();
-		const currentFrame = game.getCurrnetFrame();
-		const isStrikebool = currentFrame.isStrike();
+	// test("get hit pin count", () => {
+	// 	const game = new gamebowling();
+	// 	const currentframe = game.getcurrnetframe();
 
-		expect(isStrikebool).toBeTruthy();
-	});
+	// 	expect(isstrikebool).tobetruthy();
+	// });
 	//
 });
