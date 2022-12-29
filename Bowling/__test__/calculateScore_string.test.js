@@ -9,17 +9,17 @@ describe("Bowling score board tests", () => {
 
 		// 프레임에 점수 계산하기(#2 스코어보드 이미지)
 		let score = 0;
-		for(let i = 0; i < pin.length; i++){
+		for (let i = 0; i < pin.length; i++) {
 			score += parseInt(pin[i])
 		}
 
-		if (score > 10){
+		if (score > 10) {
 			return -1;
 		}
 		// 나와라 점수!
 		return score;
 	}
-	
+
 	test("check frame score", () => {
 		let frame = [['1,2'], ['2,3'], ['10,0']];
 
@@ -28,11 +28,17 @@ describe("Bowling score board tests", () => {
 		expect(calculateScores(frame[2])).toBe(10);
 	});
 
-	test("check validation score", () => {
+	test("validation score", () => {
 		let frame = [['5,6']];
 
 		expect(calculateScores(frame[0])).toBe(-1);
 	})
+
+	// 점수 
+	test("", () => {
+
+	})
+
 });
 
 // https://github.com/gather-around-and-code/CodeKata/issues/2
