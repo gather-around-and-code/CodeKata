@@ -1,0 +1,5 @@
+jest.config.jest
+*.md
+*.json
+/node_modules
+/converage
