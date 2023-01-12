@@ -1,12 +1,12 @@
 class Frame {
     #_first
     #_second
-    #_totalScore
+    #_frameScore = undefined;
 
     constructor(first, second) {
         this.#_first = first;
         this.#_second = second;
-        this.#_totalScore = first + second; 
+        this.#_frameScore = first + second; 
     }
 
     isSpare() {
@@ -24,8 +24,8 @@ class Frame {
         return false
     }
 
-    getTotalScore() {
-        return this.#_totalScore;
+    getFrameScore() {
+        return this.#_frameScore;
     }
 }
 

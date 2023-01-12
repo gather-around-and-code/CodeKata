@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"scripts": {
 		"test": "jest --watch --coverage",
-		"debug" : "jest debug",
+		"debug": "jest debug",
 		"prettier": "prettier --write \"**/*.{js,json,css,md}\""
 	},
 	"devDependencies": {
