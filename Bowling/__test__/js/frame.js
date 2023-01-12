@@ -27,6 +27,18 @@ class Frame {
     getFrameScore() {
         return this.#_frameScore;
     }
+
+    getFirstScore() {
+        return this.#_first;
+    }
+
+    getSecondScore() {
+        return this.#_second;
+    }
+
+    setFrameScore(score){    
+        this.#_frameScore = score;
+    }   
 }
 
 module.exports = Frame;
