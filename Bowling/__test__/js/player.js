@@ -1,15 +1,15 @@
 class Player {
   #_name
-  #_currentFrame = 2
+  #_currentFrame = 1;
   #_frames = []
   
   constructor(name) {
     this.#_name = name; 
-    
   }
 
   addFrame(frame) {
     this.#_frames.push(frame);
+    this.#_currentFrame += 1;
   }
   
   getCurrentFrame() {
@@ -21,7 +21,7 @@ class Player {
     
     let score = 0;
     this.#_frames.forEach(frame => {
-      score += frame.getTotalScore();
+      score += frame.getFrameScore();
     });
     
     return score;
