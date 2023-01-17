@@ -1,6 +1,6 @@
 class Player {
   #_name
-  #_currentFrame = 1;
+  #_currentFrameNumber = 1;
   #_frames = []
   
   constructor(name) {
@@ -9,22 +9,30 @@ class Player {
 
   addFrame(frame) {
     this.#_frames.push(frame);
-    this.#_currentFrame += 1;
+    this.#_currentFrameNumber += 1;
+  }
+
+  getFrames() {
+    return this.#_frames;
   }
   
-  getCurrentFrame() {
+  getCurrentFrameNumber() {
     // const frame = new Frame()
-    return this.#_currentFrame;
+    return this.#_currentFrameNumber;
   }
 
   calcualteTotalScore() {
     
     let score = 0;
     this.#_frames.forEach(frame => {
-      score += frame.getFrameScore();
+      score += frame.getScore();
     });
     
     return score;
+  }
+
+  getFrameScore(frameNumber) {
+    return this.#_frames[frameNumber].getScore();
   }
 }
 
