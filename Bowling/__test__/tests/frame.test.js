@@ -74,17 +74,26 @@ test('strike -> spare', () => {
     expect(frame1.getScore()).toEqual(20)
 })
 
-test('loop test', () => { 
+test('pins test', () => { 
   // strike -> strike -> strike = f1.getScore = 30
-  // currentFrame = 3
+  //           0    1   2   3   4
+  let pins = [];
+  let player = new Player('test');
 
-  let p = new Player('test')
-  p.addFrame(10, 0)
-  p.addFrame(10, 0)
-  p.addFrame(10, 0)
+  player.addFrame(new Frame(10, 0));
+  player.addFrame(new Frame(9, 1));
+  player.addFrame(new Frame(2, 1));
 
-  // expect(p.f1.getScore()).toBe(30);
-  // expect(p.getCurrentFrameNumber()).toBe(4);
-  // expect(p.calcualteTotalScore()).toBe(undefined);
+  let firstScore = player.getFirstScore(1); // 10
+  let secondScore = player.getSecondScore(1); // 0
+  let thirdScore = player.getFirstScore(2); // 9
+
+  pins.push(firstScore);
+  pins.push(secondScore);
+  pins.push(thirdScore);
+
+  const score = player.calculateScore(pins);
+  
+  expect(score).toBe(19);
 
 })

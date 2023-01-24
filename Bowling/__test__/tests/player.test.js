@@ -30,29 +30,34 @@ test('strike -> x', () => {
   expect(p.getFrameScore(0)).toBe(undefined);
 })
 
-test('turkey score calculate', () => {
+test('calculate score', () => {
   let p = new Player('test')
 
+  p.addFrame(new Frame(10, 0)) // 30
+  p.addFrame(new Frame(9, 1)) 
   p.addFrame(new Frame(10, 0))
-  p.addFrame(new Frame(10, 0))
-  p.addFrame(new Frame(10, 0))
 
-  //p.addFrame(new Frame(10, 10, 10))
+  let pins = [];
 
-  let frames = p.getFrames();
+  const first = p.getFirstScore(1);
+  const second = p.getFirstScore(2);
+  const third = p.getSecondScore(2);
 
-  for (let i = 0; i < 10; i++) {
-    if (i < 8){
-      if (frames[i].isStrike()) {
-        if (frames[i + 1].isStrike() && frames[i+2].isStrike()) {
-            frames[i].setScore(30);
-        } else {
-            frames[i].setScore(20 + frames[i + 2].getFirstScore())
-        }
-        }
-      }
-    }
+  pins.push(first, second, third);
 
-  expect(p.getFrameScore(0)).toBe(30);
+  const result = p.calculateScore(pins);
+  expect(result).toBe(20);
 })
 
+test('total score', () => {
+  let p = new Player('test');
+
+  p.addFrame(new Frame(9, 1)); // 17
+  p.addFrame(new Frame(7, 2));
+  p.addFrame(new Frame(7, 1));
+
+  let pins = p.getPins(1)
+  let FirstFrameScore = p.calculateScore(pins);
+  
+  expect(FirstFrameScore).toBe(17);
+})
