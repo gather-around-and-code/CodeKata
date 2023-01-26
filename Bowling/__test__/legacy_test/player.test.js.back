@@ -48,16 +48,3 @@ test('calculate score', () => {
   const result = p.calculateScore(pins);
   expect(result).toBe(20);
 })
-
-test('total score', () => {
-  let p = new Player('test');
-
-  p.addFrame(new Frame(9, 1)); // 17
-  p.addFrame(new Frame(7, 2));
-  p.addFrame(new Frame(7, 1));
-
-  let pins = p.getPins(1)
-  let FirstFrameScore = p.calculateScore(pins);
-  
-  expect(FirstFrameScore).toBe(17);
-})
