@@ -1,11 +1,22 @@
 class Frame {
-    #_first
-    #_second
-    #_score = undefined;
+    #_first;
+    #_second;
+    #_state = true;
 
     constructor(first, second) {
         this.#_first = first;
         this.#_second = second;
+    }
+
+    throwResult(pins) {
+      if (this.#_state == true) {
+        this.#_first = pins;
+        this.#_state = false;
+      }
+      else {
+        this.#_second = pins;
+        this.#_state = true;
+      }
     }
 
     isSpare() {
@@ -30,13 +41,9 @@ class Frame {
         return this.#_second;
     }
 
-    getScore() {
-        return this.#_score;
+    getFrameScore() {
+      return this.#_first + this.#_second;
     }
-
-    setScore(score){    
-        this.#_score = score;
-    }   
 }
 
 module.exports = Frame;

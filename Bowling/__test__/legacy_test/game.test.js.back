@@ -9,7 +9,6 @@ test('Perfect game', () => {
     p.addFrame(10, 0);
   }
 
-  let pins = p.getPins(10)
   let expectScore = p.calculateScore(pins);
 
   expect(expectScore).toBe(300);
