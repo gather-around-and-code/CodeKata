@@ -1,18 +1,25 @@
 defmodule BowlingElixir do
-  @moduledoc """
-  Documentation for `BowlingElixir`.
-  """
+  def game_start() do
+  end
 
-  @doc """
-  Hello world.
+  def game do
+    %{total_score: 0}
+  end
 
-  ## Examples
+  def frames do
+    [frame_number: 1, pins: 0, throw_count: 1, is_strike: false, is_spare: false, describe: ""]
+  end
 
-      iex> BowlingElixir.hello()
-      :world
+  def create_frame do
+    frames = []
+    frame = frames()
 
-  """
-  def hello do
-    :world
+    for n <- 1..10 do
+      frames ++ frame
+    end
+  end
+
+  def strike?(%{pins: pins, frame_count: fc}) when pins == 10 and fc == 1 do
+    "X"
   end
 end

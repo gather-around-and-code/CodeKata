@@ -1,8 +1,10 @@
 defmodule BowlingElixirTest do
   use ExUnit.Case
-  doctest BowlingElixir
+  import BowlingElixir
 
-  test "greets the world" do
-    assert BowlingElixir.hello() == :world
+  test "Strike?" do
+    pins = 10
+    frame_count = 1
+    assert strike?(%{pins: pins, frame_count: frame_count}) == "X"
   end
 end
